@@ -4,6 +4,8 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const user = require('../models/user');
+const fetchuser = require('../middleware/fetchuser');
 const JWT_SECRET = 'rishabh';
 
 router.post('/', [
@@ -42,7 +44,7 @@ router.post('/', [
         res.status(500).send('Server Error');
     }
 });
-
+// user login 
 router.post('/login', [
     body('email').isEmail(),
     body('password').isLength({ min: 4 })
@@ -73,5 +75,18 @@ router.post('/login', [
         res.status(500).send('Server Error');
     }
 });
+// here we fetch the user detail with the help of tocken;
 
+router.post('/detail', fetchuser,
+ async (req, res) => {
+
+      try {
+        userId = req.user.id;
+      const userdet = await user.findById(userId).select("-password");
+      res(userdet);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Server Error');
+    }
+});
 module.exports = router;
