@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 const user = require('../models/user');
 const fetchuser = require('../middleware/fetchuser');
 const JWT_SECRET = 'rishabh';
-
+// create user info 
 router.post('/', [
     body('name').isLength({ min: 3 }),
     body('username').isLength({ min: 5 }),
