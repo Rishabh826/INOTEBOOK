@@ -2,8 +2,7 @@ import { useState } from "react";
 import Notecontext from "./Notecontext";
 
 const Notestate = (props) => {
-  const initialState = [
-  ];
+  
   const host = "http://localhost:5000";
     
 
@@ -15,7 +14,7 @@ const Notestate = (props) => {
       headers: {
         "Content-Type": "application/json",
         
-          "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY0MzM5ZTVjYTNhNTE5ZDk4NDczYjNlIn0sImlhdCI6MTcxNTY4MTc2NX0.7ehcs3MVcIPfc28Qf5AR5-T3HhZ2GlhJ9wluw_5MFPM"
+          "auth-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY0MzM5ZTVjYTNhNTE5ZDk4NDczYjNlIn0sImlhdCI6MTcxNTY4MTc2NX0.7ehcs3MVcIPfc28Qf5AR5-T3HhZ2GlhJ9wluw_5MFPM"
         
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
@@ -24,7 +23,8 @@ const Notestate = (props) => {
     });
     return response.json();
   }
-  const [notes, setnotes] = useState(initialState);
+  const notesInitial = []
+  const [notes, setnotes] = useState(notesInitial);
 
  const Addnotes =async(title,description,tags)=>{
 
@@ -40,17 +40,10 @@ const response = await fetch(`${host}/api/notes/addnotes`, {
  
   body: JSON.stringify({title,description,tags}), // body data type must match "Content-Type" header
 });
-const json= response.json();
+const note=await response.json();
 
 
-   const note={ "user": "6641e10d7wf3ed083f8bbf4ae",
-  "title": title,
-  "description":description ,
-  "tag": tags,
-  "_id": "6641e1f9cafsfcc5749c66552",
-  "date": "2024-05-13T09:48:41.610Z",
-  "__v": 0
- }
+   //
    setnotes(notes.concat(note))
   }
 
@@ -58,16 +51,18 @@ const json= response.json();
   // Delete notes 
   const deletenote =async(id)=>{
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
-      method: "PUT", // *GET, POST, PUT, DELETE, etc.
+      method: "DELETE", // *GET, POST, PUT, DELETE, etc.
      
       headers: {
-        "Content-Type": "application/json",
+        
+        "auth-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY0MzM5ZTVjYTNhNTE5ZDk4NDczYjNlIn0sImlhdCI6MTcxNTY4MTc2NX0.7ehcs3MVcIPfc28Qf5AR5-T3HhZ2GlhJ9wluw_5MFPM"
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
      
       body: JSON.stringify({id}), // body data type must match "Content-Type" header
     });
     const json =response.json();
+    console.log(json);
     const newdel = notes.filter((note)=>{return note._id!==id})
     setnotes(newdel)
  }
