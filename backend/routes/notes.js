@@ -16,7 +16,7 @@ router.get('/fetchallnotes', fetchuser, async (req, res) => {
 })
 
 // ROUTE 2: Add a new Note using: POST "/api/notes/addnote". Login required
-router.post('/addnotes', fetchuser, [
+router.post('/addnote', fetchuser, [
     body('title', 'Enter a valid title').isLength({ min: 3 }),
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),], async (req, res) => {
         try {
@@ -35,7 +35,7 @@ router.post('/addnotes', fetchuser, [
             res.json(savedNote)
 
         } catch (error) {
-            
+            console.error(error.message);
             res.status(500).send("Internal Server Error");
         }
     })
