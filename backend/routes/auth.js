@@ -15,9 +15,10 @@ router.post('/createuser', [
   body('password', 'Password must be atleast 5 characters').isLength({ min: 5 }),
 ], async (req, res) => {
   // If there are errors, return Bad request and the errors
+  const success=false;
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({success, errors: errors.array() });
   }
   try {
     // Check whether the user with this email exists already
@@ -43,9 +44,11 @@ router.post('/createuser', [
 
 
     // res.json(user)
-    res.json({ authtoken })
+    const success = true;
+    res.json({success, authtoken })
 
   } catch (error) {
+    console.log("yha aa gya");
     console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
@@ -73,7 +76,7 @@ router.post('/login', [
     }
 
     const passwordCompare = await bcrypt.compare(password, user.password);
-    if (!passwordCompare) {
+    if (passwordCompare) {
       success = false
       return res.status(400).json({ success, error: "Please try to login with correct credentials" });
     }
