@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  HashRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Home } from './components/Home';
 import About from './components/About';
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <NoteState>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           
           <Routes>
@@ -29,7 +29,7 @@ function App() {
             <Route path="/Signup" element={<Signup   />} />
             <Route path="/contact" element={<Contact   />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </NoteState>
     </>
   );
