@@ -12,7 +12,7 @@ const Signup = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password })
+      body: JSON.stringify({ name: credentials.name,  username: credentials.username, email: credentials.email, password: credentials.password })
     });
     const json = await response.json();
     console.log(json);
@@ -49,7 +49,7 @@ const Signup = () => {
                   </div>
                   <div className="form-group mx-3 my-1">
                     <label><strong>Username</strong></label>
-                    <input type="text" className="form-control login-input" style={{ borderBottom: '1px solid black', width: '400px' }} placeholder="Username" required />
+                    <input type="text" className="form-control login-input" style={{ borderBottom: '1px solid black', width: '400px' }} placeholder="Username" required  name="username" value={credentials.username} onChange={onChange} />
                   </div>
                   <div className="form-group mx-3 my-1">
                     <label><strong>Phone Number</strong></label>

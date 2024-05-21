@@ -8,6 +8,8 @@ import Login from './components/Login'; // Corrected import
 import Signup from './components/Signup';
 import NoteState from './context/NoteState';
 import Inote from './components/Inote';
+import Contact from './components/Contact';
+
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
             <Route path="/about" element={<About    />} />
             <Route path="/Login" element={<Login   />} />
             <Route path="/Signup" element={<Signup   />} />
+            <Route path="/contact" element={<Contact   />} />
           </Routes>
         </BrowserRouter>
       </NoteState>

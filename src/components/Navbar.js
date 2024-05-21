@@ -20,18 +20,27 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname==="/"? "active": ""}`} aria-current="page" to="/Home">My Notes</Link>
+                            <Link className={`nav-link ${location.pathname==="/Home"? "active": ""}`} aria-current="page" to="/Home">My Notes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname==="/about"? "active": ""}`} to="/about">About</Link>
+                            <Link className={`nav-link ${location.pathname==="/about"? "active": ""}`} to="/about">About Us</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className={`nav-link ${location.pathname==="/contact"? "active": ""}`} to="/contact">Contact Us</Link>
                         </li>
 
                     </ul>
-                    {!localStorage.getItem('token')?
-                    <form className="d-flex"> 
-                    <Link className="btn btn-light mx-1" to="/Login" role="button">Login</Link>
-                    <Link className="btn btn-light mx-1" to="/Signup" role="button">Signup</Link>
-                    </form>: <button className="btn btn-success"   onClick={handlelogout}>Logout</button>}
+                    {!localStorage.getItem('token') ? (
+    <form className="d-flex"> 
+        <Link className="btn btn-light mx-1" to="/Login" role="button">Login</Link>
+        <Link className="btn btn-light mx-1" to="/Signup" role="button">Signup</Link>
+    </form>
+) : (
+    <div className="d-flex align-items-center">
+       <i className="fa-solid fa-user-secret mx-5" style={{color:'white',fontSize:'2.5rem'}}></i>
+        <button className="btn btn-success" onClick={handlelogout}>Logout</button>
+    </div>
+)}
                 </div>
             </div>
         </nav>

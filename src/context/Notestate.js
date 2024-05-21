@@ -8,26 +8,21 @@ const NoteState = (props) => {
 
   // Get all Notes
   const getNotes = async () => {
-    try {
-      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
-          "auth-token": localStorage.getItem('token')
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('token')
         }
-      });
-      const json = await response.json();
-      if (Array.isArray(json)) {
+    });
+
+    const json = await response.json();
+    if (response.ok) {
         setNotes(json);
-      } else {
-        console.error("Fetched data is not an array", json);
-        setNotes([]);
-      }
-    } catch (error) {
-      console.error("Error fetching notes:", error);
-      setNotes([]);
+    } else {
+        console.error(json);
     }
-  };
+};
 
   // Add a Note
   const addNote = async (title, description, tag) => {

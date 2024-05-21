@@ -45,7 +45,7 @@ const Login = () => {
                   <input type="text" className="form-control login-input" style={{ backgroundColor: 'transparent',color:'white', borderTop: '1px', borderRight: '1px', borderLeft: '1px' }}      placeholder="Username or e-mail" name='email' value={Credential.email} onChange={onchange} />
                 </div>
                 <div className="form-group mx-3 my-3">
-                  <input type="password" style={{ backgroundColor: 'transparent', borderTop: '1px', borderRight: '1px', borderLeft: '1px' }} className="form-control login-input" placeholder="Password"   name='password' value={Credential.password} onchange={onchange}/>
+                  <input type="password" style={{ backgroundColor: 'transparent', borderTop: '1px', borderRight: '1px', borderLeft: '1px' }} className="form-control login-input" placeholder="Password"   name='password' value={Credential.password} onChange={onchange}/>
                   <div className="form-check d-flex align-items-center">
                     <input type="checkbox" className="form-check-input" style={{ marginTop: '20px' }} />
                     <label htmlFor="/" className="form-check-label" style={{ color: 'black',marginLeft:'10px',marginTop:'15px' }}>Remember Me</label>
