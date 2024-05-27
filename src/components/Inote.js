@@ -51,8 +51,15 @@ const Inote = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column align-items-center mb-3">
-        <div className="p-2" style={{ backgroundImage: 'url(https://wallpapers.com/images/featured/4k-moon-cval4u1dyiy223ch.jpg)', height: '60vh', width: '100%' }}>
+      <div className="d-flex flex-column align-items-center mb-3 ">
+        <div className="p-2"  style={{
+    backgroundImage: 'url(https://i.pinimg.com/originals/20/f8/eb/20f8eb85e86b370933d5e5180d632a74.gif)',
+    height: '60vh',
+    width: '100%',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}>
           <div className="d-flex flex-column align-items-center justify-content-center h-100">
             <strong style={{ color: 'white', fontSize: 'xxx-large', marginBottom: '1rem' }}>{text}</strong>
             <span style={{ color: 'white', marginBottom: '1rem' }}>
