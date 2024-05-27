@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import noteContext from "../context/noteContext";
 import Noteitem from './Noteitem';
-import AddNote from './AddNote';
-import { useNavigate } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const Notes = () => {
     const context = useContext(noteContext);
@@ -19,15 +20,15 @@ const Notes = () => {
 
     const ref = useRef(null);
     const refClose = useRef(null);
-    const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" });
+    const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "",econtent:"" });
 
     const updateNote = (currentNote) => {
         ref.current.click();
-        setNote({ id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
+        setNote({ id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag, econtent: currentNote.content });
     };
 
     const handleClick = (e) => {
-        editNote(note.id, note.etitle, note.edescription, note.etag);
+        editNote(note.id, note.etitle, note.edescription, note.etag,note.econtent);
         refClose.current.click();
     };
 
@@ -37,7 +38,10 @@ const Notes = () => {
 
     return (
         <>
-            <AddNote />
+        <div className="d-flex justify-content-end">
+        <Link className="btn btn-primary mx-4 my-10" to="/Addnotes" role="button" style={{marginTop:'3rem'}}>+ Add Notes</Link>
+        </div>
+            
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
@@ -61,6 +65,10 @@ const Notes = () => {
                                 <div className="mb-3">
                                     <label htmlFor="etag" className="form-label">Tag</label>
                                     <input type="text" className="form-control" id="etag" name="etag" value={note.etag} onChange={onChange} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="econtent" className="form-label">content</label>
+                                    <textarea type="text" className="form-control" id="econtent" name="econtent" value={note.econtent} onChange={onChange} ></textarea>
                                 </div>
                             </form>
                         </div>
