@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/INOTEBOOK/static/css/main.86d83ab3.css",
-    "main.js": "/INOTEBOOK/static/js/main.d1f77ad6.js",
+    "main.js": "/INOTEBOOK/static/js/main.3007985c.js",
     "static/js/453.d724e79d.chunk.js": "/INOTEBOOK/static/js/453.d724e79d.chunk.js",
     "index.html": "/INOTEBOOK/index.html",
     "main.86d83ab3.css.map": "/INOTEBOOK/static/css/main.86d83ab3.css.map",
-    "main.d1f77ad6.js.map": "/INOTEBOOK/static/js/main.d1f77ad6.js.map",
+    "main.3007985c.js.map": "/INOTEBOOK/static/js/main.3007985c.js.map",
     "453.d724e79d.chunk.js.map": "/INOTEBOOK/static/js/453.d724e79d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86d83ab3.css",
-    "static/js/main.d1f77ad6.js"
+    "static/js/main.3007985c.js"
   ]
 }
