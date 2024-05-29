@@ -26,7 +26,7 @@ const Noteitem = (props) => {
         <h5 className="modal-title" id="staticBackdropLabel">Full Note</h5>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div className="modal-dialog modal-dialog-scrollable mx-2">
+      <div className="modal-dialog modal-dialog-scrollable mx-2  ">
      content:  {note.content ? note.content : 'Content not available'}
 </div>
       <div className="modal-footer">
