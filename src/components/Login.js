@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -10,6 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
     const handlesubmit=async(e)=>{
         e.preventDefault();
+       
         const response = await fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
             headers: {
@@ -28,6 +29,18 @@ const Login = () => {
         else{
             alert("Invalid credentials");
         }
+        const mypromis = new Promise((resolve,reject)=>{
+          setTimeout(() => {
+            if(json.success){
+            resolve('success');}
+          }, 1000);
+        })
+        mypromis.then(result=>{
+         alert("successfully login")
+        })
+        .catch(result=>{
+          alert("please enter the valid details")
+        })
     
     }
     const onchange=(e)=>{

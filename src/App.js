@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import AddNote from './components/AddNote';
 
 
+
 function App() {
  
   
@@ -27,7 +28,7 @@ function App() {
             <Route path="/about" element={<About    />} />
             <Route path="/Login" element={<Login   />} />
             <Route path="/Signup" element={<Signup   />} />
-            <Route path="/contact" element={<Contact   />} />
+            <Route path="/contact" element={<Contact  />} />
             <Route path="/Addnotes" element={<AddNote />} />
           </Routes>
         </HashRouter>

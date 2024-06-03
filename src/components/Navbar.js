@@ -9,6 +9,14 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate("/Login");
+        const mypromis= new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('success!')
+            }, 1000);
+        })
+        mypromis.then(result=>{
+            alert("Logout successfully")
+        })
     };
 
     
