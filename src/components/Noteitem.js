@@ -6,7 +6,7 @@ const Noteitem = (props) => {
     const { deleteNote } = context;
     const { note, updateNote } = props;
 
-    const speek = () => {
+   const speek = () => {
         // Create a new SpeechSynthesisUtterance object with the note content
         var uttern = new SpeechSynthesisUtterance(note.content ? note.content : 'Content not available');
         // Speak the text

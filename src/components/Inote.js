@@ -53,7 +53,7 @@ const Inote = () => {
     <div>
       <div className="d-flex flex-column align-items-center mb-3 ">
         <div className="p-2"  style={{
-    backgroundImage: 'url(https://i.pinimg.com/originals/20/f8/eb/20f8eb85e86b370933d5e5180d632a74.gif)',
+    backgroundImage: 'url(https://s.yimg.com/ny/api/res/1.2/4R61dJVHDRxYU7qeL4lZSw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM0OQ--/https://media.zenfs.com/en/accuweather_297/d53576fda71ac72eaf53b72a2e3451b0)',
     height: '60vh',
     width: '100%',
     backgroundSize: 'cover',
