@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaCarSide, FaEllipsisH, FaAws, FaReact, FaPython, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { PiFileSqlBold } from 'react-icons/pi';
-import { IoLogoHtml5 } from 'react-icons/io5';
-import { SiMongodb } from 'react-icons/si';
+
 import { Link } from 'react-router-dom';
 import '../Inote.css';
 
@@ -70,81 +68,80 @@ const Inote = () => {
             </marquee>
           </div>
         </div>
-        <div className="container p-2" style={{ backgroundImage: 'url(https://wallpapers.com/images/featured/cool-white-background-ingbh7qw7if21dkn.jpg)' }}>
-          <div className="d-flex justify-content-center" style={{ textShadow: '4px 3px 3px black' }}>
-            <h1><strong><span style={{ color: 'blue' }}>Unlock</span> Your Career</strong></h1>
+        <div className="d-flex flex-column ">
+          <video src="video/youtube.mp4" controls style={{ width: '100%', height: 'auto', marginTop: '2rem' }} className="rounded"></video>
+          <Link to="https://youtu.be/XEvuIC0Hhoc?si=aeaMuFP_utg-KRPk" className="btn btn-primary" style={{ marginTop: '2rem' }}>Click TO Play</Link>
           </div>
-          <marquee className="d-flex justify-content-center" style={{ color: 'rgb(117, 109, 111)', marginBottom: '20px', animation: 'wave 2s infinite' }}>
-            <FaCarSide /> <FaEllipsisH /> Explore opportunities from across the globe to learn, showcase skills, gain CV points & get hired by your dream company.
-          </marquee>
-          <div className="row justify-content-around mt-4">
-            <div className="col-md-4">
-              <Link className="link to Learn" to="/Learn">
-                <div className="card text-bg-dark h-90" style={{ cursor: 'pointer', boxShadow: '5px 5px 5px black' }}>
-                  <img src="https://i.pinimg.com/originals/61/87/e9/6187e9226969b30607c22591376850b7.jpg" className="card-img" alt="..." />
-                  <div className="card-img-overlay">
-                    <h5 className="card-title">Learn</h5>
-                    <hr style={{ backgroundColor: 'blue', height: '2px', margin: '8px 0' }} />
-                    <p className="card-text"><strong>Expand</strong>
-                      <span style={{ fontSize: '3rem', marginLeft: '4rem' }}><SiMongodb /></span><br />Knowledge Base</p>
-                    <span style={{ fontSize: '3rem' }}><FaAws /></span>
-                    <span style={{ fontSize: '3rem', marginLeft: '8px' }}><FaReact /></span>
-                    <span style={{ fontSize: '3rem', marginLeft: '8px' }}><PiFileSqlBold /></span>
-                    <span style={{ fontSize: '3rem', marginLeft: '8px' }}><FaPython /></span>
-                    <span style={{ fontSize: '3rem', marginLeft: '8px' }}><IoLogoHtml5 /></span>
-                  </div>
-                </div>
-              </Link>
+          <div className="d-flex justify-content-center">
+          <div className="work" style={{ marginTop: '4rem' }}>
+            <h1>How it works?</h1>
+            <div class="d-flex justify-content-around" style={{ marginTop: '2rem' }}>
+
+               
+            <div class="card" style={{width: '18rem'}}>
+            <div class="d-flex justify-content-center">
+            <a class="navbar-brand" href="#">
+      <img src="https://cdn.dribbble.com/users/4625326/screenshots/19602645/media/a38d52a0a465a2265aee186316cfa590.gif" alt="" width="80" height="64" class="d-inline-block align-text-top"/>
+      
+    </a>
             </div>
-            <div className="col-md-4">
-              <Link className="link to Jobs" to="/Jobs">
-                <div className="card text-bg-dark h-90" style={{ cursor: 'pointer', boxShadow: '5px 5px 5px black' }}>
-                  <img src="https://cdn.siasat.com/wp-content/uploads/2021/10/photo_2021-10-27_20-29-34.jpg" className="card-img" alt="..." />
-                  <div className="card-img-overlay">
-                    <h5 className="card-title">Jobs</h5>
-                    <p className="card-text"><strong>Explore</strong><br />Diverse career</p>
-                  </div>
-                </div>
-              </Link>
+         
+  <div class="card-body">
+    <h5 class="card-title">UPLOAD YOUR STUDY NOTES</h5>
+    <p class="card-text">Sign up for free and upload your documents, study notes and guides on Docmerit.
+</p>
+   
+  </div>
+</div>
+
+
+<div class="card" style={{width: '18rem',marginLeft:'2rem'}}>
+            <div class="d-flex justify-content-center">
+            <a class="navbar-brand" href="#">
+      <img src="https://media.tenor.com/rxVBUIgNvD0AAAAM/green-stock-market-remedium.gif" alt="" width="80" height="64" class="d-inline-block align-text-top"/>
+      
+    </a>
             </div>
-            <div className="col-md-4">
-              <Link className="link to Practice" to="/Practice">
-                <div className="card text-bg-dark h-90" style={{ cursor: 'pointer', boxShadow: '5px 5px 5px black' }}>
-                  <img src="https://c0.wallpaperflare.com/preview/498/976/47/success-stairs-board-drawing.jpg" className="card-img" alt="..." />
-                  <div className="card-img-overlay">
-                    <h5 className="card-title">Practice</h5>
-                    <p className="card-text"><strong>Refine</strong><br />Skill Daily</p>
-                  </div>
-                </div>
-              </Link>
+         
+  <div class="card-body">
+    <h5 class="card-title">SET YOUR PRICE</h5>
+    <p class="card-text">Set the selling price yourself and promote your documents, so that it reaches to many students.
+</p>
+   
+  </div>
+</div>
+
+
+<div class="card" style={{width: '18rem',marginLeft:'2rem'}}>
+            <div class="d-flex justify-content-center">
+            <a class="navbar-brand" href="#">
+      <img src="https://cdn.pixabay.com/animation/2022/11/15/11/35/11-35-07-140_512.gif" alt="" width="80" height="90" class="d-inline-block align-text-top"/>
+      
+    </a>
             </div>
+         
+  <div class="card-body">
+    <h5 class="card-title">
+    HAVE MULTIPLE SALES</h5>
+    <p class="card-text">Student purchases your document, your earned money gets directly credited to your account.
+</p>
+   
+  </div>
+</div>
+<hr />
+                       </div>
           </div>
-          <div className="row justify-content-around mt-4">
-            <div className="col-md-6">
-              <Link className="link to Mentorship" to="/Mentorship">
-                <div className="card text-bg-dark h-90" style={{ cursor: 'pointer', boxShadow: '5px 5px 5px black' }}>
-                  <img src="https://c0.wallpaperflare.com/preview/805/197/218/hikers-mentor-help-climbing.jpg" className="card-img" alt="..." />
-                  <div className="card-img-overlay">
-                    <h5 className="card-title">Mentorship</h5>
-                    <p className="card-text"><strong>Guidance</strong><br />From Top Mentor</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-md-6">
-              <Link className="link to Compete" to="/Compete">
-                <div className="card text-bg-dark h-90" style={{ cursor: 'pointer', boxShadow: '5px 5px 5px black' }}>
-                  <img src="https://c1.wallpaperflare.com/preview/612/780/946/shaking-hands-handshake-teamwork-staff.jpg" className="card-img" alt="..." />
-                  <div className="card-img-overlay">
-                    <h5 className="card-title">Compete</h5>
-                    <p className="card-text"><strong>Battle</strong><br />For Excellence</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
+          
           </div>
-        </div>
+          <div class="d-flex justify-content-between">
+
+<div className="earnimage"><img src="https://ugokawaii.com/wp-content/uploads/2022/12/notebook.gif" alt="" /></div>
+
       </div>
+          
+      </div>
+      
+      
       <footer className="footer mt-auto py-3">
         <div className="container">
           <div className="row">
