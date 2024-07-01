@@ -78,7 +78,7 @@ const Inote = () => {
             <div class="d-flex justify-content-around" style={{ marginTop: '2rem' }}>
 
                
-            <div class="card" style={{width: '18rem'}}>
+            <div class="card" style={{width: '18rem',border:'none',boxShadow:'none',marginTop:'2rem'}}>
             <div class="d-flex justify-content-center">
             <a class="navbar-brand" href="#">
       <img src="https://cdn.dribbble.com/users/4625326/screenshots/19602645/media/a38d52a0a465a2265aee186316cfa590.gif" alt="" width="80" height="64" class="d-inline-block align-text-top"/>
@@ -95,7 +95,7 @@ const Inote = () => {
 </div>
 
 
-<div class="card" style={{width: '18rem',marginLeft:'2rem'}}>
+<div class="card" style={{width: '18rem',marginLeft:'2rem',border:'none',boxShadow:'none',marginTop:'2rem'}}>
             <div class="d-flex justify-content-center">
             <a class="navbar-brand" href="#">
       <img src="https://media.tenor.com/rxVBUIgNvD0AAAAM/green-stock-market-remedium.gif" alt="" width="80" height="64" class="d-inline-block align-text-top"/>
@@ -112,7 +112,7 @@ const Inote = () => {
 </div>
 
 
-<div class="card" style={{width: '18rem',marginLeft:'2rem'}}>
+<div class="card" style={{width: '18rem',marginLeft:'2rem',border:'none',boxShadow:'none',marginTop:'2rem'}}>
             <div class="d-flex justify-content-center">
             <a class="navbar-brand" href="#">
       <img src="https://cdn.pixabay.com/animation/2022/11/15/11/35/11-35-07-140_512.gif" alt="" width="80" height="90" class="d-inline-block align-text-top"/>
@@ -138,6 +138,36 @@ const Inote = () => {
 <div className="earnimage"><img src="https://ugokawaii.com/wp-content/uploads/2022/12/notebook.gif" alt="" /></div>
 
       </div>
+      <div class="d-flex justify-content-between">
+
+      <div class="card" style={{width: '18rem',marginRight:'2rem',border:'none',boxShadow:'none'}}>
+  <div class="card-body">
+    <h5 class="card-title">CIT'S EASY AND
+    SIMPLE</h5>
+    <p class="card-text">Set the selling price yourself and promote your documents.</p>
+  
+  </div>
+</div>
+
+
+<div class="card" style={{width: '18rem',marginRight:'2rem',border:'none',boxShadow:'none'}}>
+  <div class="card-body">
+    <h5 class="card-title">EARN MONEY WITH
+    EXISTING WORK</h5>
+    <p class="card-text">Make money by selling your course notes while helping others learn.</p>
+  
+  </div>
+</div>
+
+<div class="card bg-dark text-white" style={{border:'none',boxShadow:'none'}}>
+  <img src="https://cdn.dribbble.com/users/1538458/screenshots/3378120/laptop-guy.gif" class="card-img" alt="..."/>
+  
+</div>
+      </div>
+        
+
+
+
           
       </div>
       

@@ -25,7 +25,7 @@ const Navbar = () => {
         <>
          
 
-            <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundImage: 'url(https://media.istockphoto.com/id/1783642891/photo/real-starfield-background.webp?b=1&s=170667a&w=0&k=20&c=sHO2hQ7yGH-7qWpHiXpV_ehdfXwLWx6lLgUct5dASA0=)' }}>
+            <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={{ backgroundImage: 'url(https://media.istockphoto.com/id/1783642891/photo/real-starfield-background.webp?b=1&s=170667a&w=0&k=20&c=sHO2hQ7yGH-7qWpHiXpV_ehdfXwLWx6lLgUct5dASA0=)' }}>
                 <div className="container-fluid">
                 <img src="https://i.pinimg.com/originals/58/11/68/581168252081681aa1fd9fc35dc665b6.gif" alt="Logo" width="90" height="64" className="d-inline-block align-text-top"/>
                     <Link className="navbar-brand" to="/">C-Notebook</Link>
