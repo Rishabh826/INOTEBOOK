@@ -11,3 +11,114 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.hovercard {
+  width: 510px;
+  height: 454px;
+  border-radius: 4px;
+  background: #212121;
+  display: flex;
+  gap: 5px;
+  padding: .4em;
+}
+
+.hovercard p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .5s;
+  background: #212121;
+  border: 1px solid #ff5a91;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hovercard p:hover {
+  flex: 4;
+}
+
+.hovercard p span {
+  min-width: 14em;
+  padding: .5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all .5s;
+  text-transform: uppercase;
+  color: #ff568e;
+  letter-spacing: .1em;
+}
+
+.hovercard p:hover span {
+  transform: rotate(0);
+}
+
+
+.usercard {
+  width: 190px;
+  height: 254px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .usercard2 {
+  width: 190px;
+  height: 254px;
+  background-color: #1a1a1a;
+  border-radius:;
+  transition: all .2s;
+ }
+ 
+ .usercard2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .usercard:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+ .imgcontainer {
+  padding: 30px;
+  background-color: #1a1a1a;
+}
+
+.upload-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-upload {
+  flex: 1;
+  padding: 10px;
+}
+
+.image-upload input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.uploaded-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.text-content {
+  flex: 2;
+  padding: 10px;
+}
+
+.text-content textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

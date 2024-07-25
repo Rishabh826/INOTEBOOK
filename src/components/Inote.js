@@ -3,6 +3,7 @@ import { FaCarSide, FaEllipsisH, FaAws, FaReact, FaPython, FaFacebook, FaTwitter
 
 import { Link } from 'react-router-dom';
 import '../Inote.css';
+import '../index.css';
 
 const Inote = () => {
   const [text, setText] = useState('');
@@ -70,7 +71,7 @@ const Inote = () => {
         </div>
         <div className="d-flex flex-column ">
           <video src="video/youtube.mp4" controls style={{ width: '100%', height: 'auto', marginTop: '2rem' }} className="rounded"></video>
-          <Link to="https://youtu.be/XEvuIC0Hhoc?si=aeaMuFP_utg-KRPk" className="btn btn-primary" style={{ marginTop: '2rem' }}>Click TO Play</Link>
+          <Link to="https://youtu.be/XEvuIC0Hhoc?si=aeaMuFP_utg-KRPk" className="btn btn-primary" style={{ marginTop: '2rem' }}>Click Me To Play</Link>
           </div>
           <div className="d-flex justify-content-center">
           <div className="work" style={{ marginTop: '4rem' }}>
@@ -135,7 +136,7 @@ const Inote = () => {
           </div>
           <div class="d-flex justify-content-between">
 
-<div className="earnimage"><img src="https://ugokawaii.com/wp-content/uploads/2022/12/notebook.gif" alt="" /></div>
+<div className="earnimage"><img src="https://resources.nicepage.com/168/82168/file-upload.jpg" alt="" /></div>
 
       </div>
       <div class="d-flex justify-content-between">
@@ -170,6 +171,44 @@ const Inote = () => {
 
           
       </div>
+
+      <div class="imgcontainer" >
+  <div class="upload-container">
+    <div class="image-upload">
+    
+    
+      <img src="https://img.freepik.com/vecteurs-libre/illustration-concept-visionneuse-image_114360-4532.jpg"  />
+    </div>
+    <div class="text-content">
+      <h1 style={{color:'white',fontFamily:'fantasy',fontSize:'4rem'}}>Upload, Share, Learn: Notes Made Easy </h1>
+     
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+
+      <div class="col-md-6 d-flex align-items-center">
+        <div>
+          <h2 style={{fontFamily:'fantasy',fontSize:'4rem'}}>Notes Shared, Knowledge Gained, Success Achieved</h2>
+          <p>
+          Welcome to our Notes Upload website, where collaboration meets convenience! Our platform allows students to easily upload, share, and access a vast collection of notes, ensuring that knowledge is always within reach. Whether you're looking to review class materials, prepare for exams, or contribute to the academic community, our site is designed to support your educational journey. Join us in creating a rich repository of knowledge and experience the power of shared learning.
+          </p>
+        </div>
+      </div>
+     
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="w-100">
+        <div class="hovercard">
+    <p><span><img src="https://www.shutterstock.com/image-photo/top-view-young-woman-sitting-260nw-710815861.jpg" alt="" /></span></p>
+    <p><span><img src="https://www.shutterstock.com/image-photo/hands-beautiful-young-professional-designer-260nw-387564814.jpg" alt="" /></span></p>
+    <p><span><img src="https://www.shutterstock.com/image-photo/profile-side-photo-young-attractive-260nw-2068318775.jpg" alt="" /></span></p>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
       
       
       <footer className="footer mt-auto py-3">
@@ -182,11 +221,11 @@ const Inote = () => {
             <div className="col-md-4">
               <h5>Quick Links</h5>
               <ul className="list-unstyled">
-                <li><Link to="/Learn">Learn</Link></li>
-                <li><Link to="/Jobs">Jobs</Link></li>
-                <li><Link to="/Practice">Practice</Link></li>
-                <li><Link to="/Mentorship">Mentorship</Link></li>
-                <li><Link to="/Compete">Compete</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">MY Notes</Link></li>
+                <li><Link to="/">About Us</Link></li>
+                <li><Link to="/">Contact Us</Link></li>
+                
               </ul>
             </div>
             <div className="col-md-4">
