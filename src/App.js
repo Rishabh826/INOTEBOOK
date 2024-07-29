@@ -10,6 +10,7 @@ import NoteState from './context/NoteState';
 import Inote from './components/Inote';
 import Contact from './components/Contact';
 import AddNote from './components/AddNote';
+import NotesMarket from './components/NotesMarket';
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/Login" element={<Login   />} />
             <Route path="/Signup" element={<Signup   />} />
             <Route path="/contact" element={<Contact  />} />
+            <Route path="/market" element={<NotesMarket  />} />
             <Route path="/Addnotes" element={<AddNote />} />
           </Routes>
         </HashRouter>

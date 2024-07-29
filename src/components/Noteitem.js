@@ -15,6 +15,9 @@ const Noteitem = (props) => {
     const stop =()=>{
       speechSynthesis.cancel();
     }
+    const sellnotes =()=>{
+        localStorage.setItem('storage',note)
+    }
 
     return (
         <div className="card mx-4" style={{ width: '18rem' }}>
@@ -46,6 +49,7 @@ const Noteitem = (props) => {
                 </div>
                 <i className="far fa-trash-alt mx-2" onClick={() => { deleteNote(note._id) }}></i>
                 <i className="far fa-edit mx-2" onClick={() => { updateNote(note) }}></i>
+                <i class="fa-brands fa-sellsy" onClick={sellnotes}></i>
             </div>
         </div>
     );
