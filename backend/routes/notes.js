@@ -85,5 +85,53 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
     }
+    
+
 })
+
+
+// notes market
+
+// Fetch all notes available in the market
+router.get('/notesmarket', async (req, res) => {
+    try {
+        const notes = await Note.find({ status: 'available' }); // Adjust based on how you mark notes as available in the market
+        res.json(notes);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+
+// Mark a note as sold using: PUT "/api/notes/markassold/:id". Login required
+// ROUTE: Mark a note as sold using: PUT "/api/notes/markassold/:id". Login required
+router.put('/markassold/:id', fetchuser, async (req, res) => {
+    try {
+        // Find the note to be updated
+        let note = await Note.findById(req.params.id);
+        if (!note) {
+            return res.status(404).send("Not Found");
+        }
+        
+        // Ensure the note belongs to the user
+        if (note.user.toString() !== req.user.id) {
+            return res.status(401).send("Not Allowed");
+        }
+
+        // Update the note status to 'sold'
+        note.status = 'sold';
+        note.soldAt = new Date();
+        await note.save();
+
+        res.json({ "Success": "Note has been marked as sold", note });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+
 module.exports = router

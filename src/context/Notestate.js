@@ -5,6 +5,7 @@ const NoteState = (props) => {
   const host = "http://localhost:5000";
 
   const [notes, setNotes] = useState([]);
+  const [notesMarket, setNotesMarket] = useState([]);
 
   // Get all Notes
   const getNotes = async () => {
@@ -22,18 +23,18 @@ const NoteState = (props) => {
     } else {
         console.error(json);
     }
-};
+  };
 
   // Add a Note
-  const addNote = async (title, description, tag,content) => {
+  const addNote = async (title, description, tag, content) => {
     try {
       const response = await fetch(`${host}/api/notes/addnote`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          "auth-token":   localStorage.getItem('token')
+          'auth-token': localStorage.getItem('token')
         },
-        body: JSON.stringify({ title, description, tag,content })
+        body: JSON.stringify({ title, description, tag, content })
       });
 
       const note = await response.json();
@@ -50,7 +51,7 @@ const NoteState = (props) => {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          "auth-token":   localStorage.getItem('token')
+          'auth-token': localStorage.getItem('token')
         }
       });
       const json = await response.json();
@@ -63,22 +64,22 @@ const NoteState = (props) => {
   };
 
   // Edit a Note
-  const editNote = async (id, title, description, tag,content) => {
+  const editNote = async (id, title, description, tag, content) => {
     try {
       const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          "auth-token":   localStorage.getItem('token')
+          'auth-token': localStorage.getItem('token')
         },
-        body: JSON.stringify({ title, description, tag,content })
+        body: JSON.stringify({ title, description, tag, content })
       });
       const json = await response.json();
       console.log(json);
 
       setNotes((prevNotes) =>
         prevNotes.map((note) =>
-          note._id === id ? { ...note, title, description, tag,content } : note
+          note._id === id ? { ...note, title, description, tag, content } : note
         )
       );
     } catch (error) {
@@ -86,8 +87,57 @@ const NoteState = (props) => {
     }
   };
 
+  // Get Notes for Market
+  const getNotesMarket = async () => {
+    try {
+      const response = await fetch(`${host}/api/notes/notesmarket`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          
+        }
+      });
+      const json = await response.json();
+      if (response.ok) {
+        setNotesMarket(json);
+      } else {
+        console.error(json);
+      }
+    } catch (error) {
+      console.error("Error fetching market notes:", error);
+    }
+  };
+  // Function to mark the note as sold
+// NoteState.js
+
+const markAsSold = async (id) => {
+  try {
+    const response = await fetch(`${host}/api/notes/markassold/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('token')
+      }
+    });
+    const json = await response.json();
+    console.log(json);
+
+    // Update the notes state
+    setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id));
+
+    // Add the sold note to the notesMarket state
+    setNotesMarket((prevNotesMarket) => [...prevNotesMarket, json.note]);
+
+    // Optionally, refresh the notes market list
+    getNotesMarket();
+  } catch (error) {
+    console.error("Error marking note as sold:", error);
+  }
+};
+
+
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
+    <NoteContext.Provider value={{ notes, notesMarket, addNote, deleteNote, editNote, getNotes, getNotesMarket,markAsSold }}>
       {props.children}
     </NoteContext.Provider>
   );
