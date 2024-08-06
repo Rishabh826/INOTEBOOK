@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const NoteState = (props) => {
   const host = "http://localhost:5000";
-
+  const initialNotesMarket = [];
   const [notes, setNotes] = useState([]);
-  const [notesMarket, setNotesMarket] = useState([]);
+  const [notesMarket, setNotesMarket] = useState(initialNotesMarket);
 
   // Get all Notes
   const getNotes = async () => {
@@ -90,23 +90,19 @@ const NoteState = (props) => {
   // Get Notes for Market
   const getNotesMarket = async () => {
     try {
-      const response = await fetch(`${host}/api/notes/notesmarket`, {
+      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          
         }
       });
       const json = await response.json();
-      if (response.ok) {
-        setNotesMarket(json);
-      } else {
-        console.error(json);
-      }
+      setNotesMarket(json);
     } catch (error) {
-      console.error("Error fetching market notes:", error);
+      console.error("Error fetching notes market:", error);
     }
   };
+  
   // Function to mark the note as sold
 // NoteState.js
 
@@ -120,13 +116,9 @@ const markAsSold = async (id) => {
       }
     });
     const json = await response.json();
-    console.log(json);
 
-    // Update the notes state
     setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id));
-
-    // Add the sold note to the notesMarket state
-    setNotesMarket((prevNotesMarket) => [...prevNotesMarket, json.note]);
+    setNotesMarket((prevNotesMarket) => (Array.isArray(prevNotesMarket) ? [...prevNotesMarket, json.note] : [json.note]));
 
     // Optionally, refresh the notes market list
     getNotesMarket();
@@ -134,6 +126,8 @@ const markAsSold = async (id) => {
     console.error("Error marking note as sold:", error);
   }
 };
+
+
 
 
   return (

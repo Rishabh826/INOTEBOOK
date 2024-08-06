@@ -107,6 +107,7 @@ router.get('/notesmarket', async (req, res) => {
 
 // Mark a note as sold using: PUT "/api/notes/markassold/:id". Login required
 // ROUTE: Mark a note as sold using: PUT "/api/notes/markassold/:id". Login required
+// ROUTE: Mark a note as sold using: PUT "/api/notes/markassold/:id". Login required
 router.put('/markassold/:id', fetchuser, async (req, res) => {
     try {
         // Find the note to be updated
